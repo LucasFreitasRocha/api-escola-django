@@ -1,8 +1,8 @@
-from django.http import JsonResponse
-from aluno.service import Service
-def alunos(request):
-  service = Service()
-  if request.method == 'GET':
-    return JsonResponse(service.list_alunos())
+from rest_framework import viewsets
+from aluno.models import Aluno
+from aluno.serializer import AlunoSerializer
 
-# Create your views here.
+class AlunosViewSet(viewsets.ModelViewSet):
+  """Exibindo todos os alunos."""
+  queryset = Aluno.objects.all()
+  serializer_class = AlunoSerializer

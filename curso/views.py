@@ -1,6 +1,8 @@
-from django.http import JsonResponse
+from rest_framework import viewsets
+from curso.models import Curso
+from curso.serializer import CursoSerializer
 
-# Create your views here.
-
-def cursos(request):
-  pass
+class CursosViewSet(viewsets.ModelViewSet):
+  """Exibindo todos os cursos."""
+  queryset = Curso.objects.all()
+  serializer_class = CursoSerializer
