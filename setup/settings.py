@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'aluno.apps.AlunoConfig',
     'curso.apps.CursoConfig',
+    'matricula.apps.MatriculaConfig',
     'rest_framework',
 ]
 
